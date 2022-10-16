@@ -4,37 +4,31 @@ def binary(num):
     bin_num = ''
     number = []
     while num != 0:
-        number.append(num % 2)
+        number.append(str(num % 2))
         num //= 2
-    for n in range(len(number)):
-        bin_num += str(number[-1])
-        number.pop()
+    number.reverse()
+    bin_num = ''.join(number)
     return bin_num
 
 def octal(num):
     oct_num = ''
     number = []
     while num != 0:
-        number.append(num % 8)
+        number.append(str(num % 8))
         num //= 8
-    for n in range(len(number)):
-        oct_num += str(number[-1])
-        number.pop()
+    number.reverse()
+    oct_num = ''.join(number)
     return oct_num
 
 def hexadecimal(num):
     hex_num = ''
     number = []
-    rest = ['A', 'B', 'C', 'D', 'E', 'F']
+    rest = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
     while num != 0:
-        if num % 16 > 9:
-            number.append(rest[(num % 16) - 10])
-        else:
-            number.append(num % 16)
+        number.append(rest[num % 16])
         num //= 16
-    for n in range(len(number)):
-        hex_num += str(number[-1])
-        number.pop()
+    number.reverse()
+    hex_num = ''.join(number)
     return hex_num
 
 print('Binary system: ', binary(num))
