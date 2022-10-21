@@ -1,5 +1,5 @@
 num = int(input('Enter number: '))
-s = int(input('Enter number between 1 and 35: '))
+s = int(input('Enter number between 1 and 36: '))
 
 def system(num, s):
     sys_num = ''
